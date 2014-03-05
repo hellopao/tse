@@ -13,11 +13,12 @@ var version = pkg.version;
 program.version(version).option('-u,--useLocal', "use local modules").parse(process.argv);
 
 var projectPath = program.args.shift() || './test';
+projectPath = path.resolve(process.cwd(),projectPath);
 
 function createProject() {
-    copy.copyDir('./template', path.resolve(projectPath));
+    copy.copyDir(path.join(__dirname,'../template'), path.resolve(projectPath));
     if (!program.useLocal) {
-        copy.copyDir('./node_modules', path.join(projectPath, 'node_modules'));
+        copy.copyDir(path.join(__dirname,'../node_modules'), path.join(projectPath, 'node_modules'));
     }
 }
 
