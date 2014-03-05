@@ -1,14 +1,14 @@
 {
   "name": "tse",
   "description": "create express project with typescript",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "author": {
     "name": "qinjia",
     "email": "qinjia@outlook.com"
   },
   "dependencies": {
     "commander":"*",
-    "express": "*",
+    "express": "3.4.8",
     "ejs": "*"
   },
   "keywords": [
@@ -25,7 +25,6 @@
     "type": "git",
     "url": "git://github.com/hellopao/tse"
   },
-  "main": "./tse.js",
   "bin": {
     "tse": "./bin/tse"
   },
