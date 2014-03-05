@@ -1,0 +1,34 @@
+#!/usr/bin / env node
+
+
+///<reference path="../lib/tslib/node.d.ts" />
+var path = require('path');
+
+var program = require('commander');
+var pkg = require('../package.json');
+var copy = require('../lib/copyDir');
+
+var version = pkg.version;
+
+program.version(version).option('-u,--useLocal', "use local modules").parse(process.argv);
+
+var projectPath = program.args.shift() || './test';
+
+function createProject() {
+    copy.copyDir('./template', path.resolve(projectPath));
+    if (!program.useLocal) {
+        copy.copyDir('./node_modules', path.join(projectPath, 'node_modules'));
+    }
+}
+
+createProject();
+
+process.on('exit', function () {
+    console.log();
+    console.log('   install dependencies:');
+    console.log('     $ cd %s && npm install', projectPath);
+    console.log();
+    console.log('   run the app:');
+    console.log('     $ node app');
+    console.log();
+});
