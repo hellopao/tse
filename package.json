@@ -1,0 +1,41 @@
+{
+  "name": "tse",
+  "description": "create express project with typescript",
+  "version": "0.0.2",
+  "author": {
+    "name": "qinjia",
+    "email": "qinjia@outlook.com"
+  },
+  "dependencies": {
+    "commander":"*",
+    "express": "*",
+    "ejs": "*"
+  },
+  "keywords": [
+    "express",
+    "typescript",
+    "web",
+    "rest",
+    "restful",
+    "router",
+    "app",
+    "api"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hellopao/tse"
+  },
+  "main": "./tse.js",
+  "bin": {
+    "express": "./bin/tse"
+  },
+  "scripts": {
+    "prepublish": "npm prune",
+    "test": "make test"
+  },
+  "engines": {
+    "node": ">= 0.10.24"
+  },
+  "license": "MIT"
+}
+
