@@ -1,5 +1,10 @@
 ﻿///<reference path='../lib/tslib/node.d.ts' />
 ///<reference path='../lib/tslib/express.d.ts' />
-function routes(app) {
+function init(app) {
+    app.get('/', function (req, res) {
+        res.render('index.html', {
+            title: "hello world"
+        });
+    });
 }
-exports.routes = routes;
+exports.init = init;
