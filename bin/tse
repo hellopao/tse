@@ -10,14 +10,14 @@ var copy = require('../lib/copyDir');
 
 var version = pkg.version;
 
-program.version(version).option('-u,--useLocal', "use local modules").parse(process.argv);
+program.version(version).option('-n,--noNodeModules', "do not use local node_modules").parse(process.argv);
 
 var projectPath = program.args.shift() || './test';
 projectPath = path.resolve(process.cwd(),projectPath);
 
 function createProject() {
     copy.copyDir(path.join(__dirname,'../template'), path.resolve(projectPath));
-    if (!program.useLocal) {
+    if (!program.noNodeModules) {
         copy.copyDir(path.join(__dirname,'../node_modules'), path.join(projectPath, 'node_modules'));
     }
 }
@@ -27,9 +27,14 @@ createProject();
 process.on('exit', function () {
     console.log();
     console.log('   install dependencies:');
-    console.log('     $ cd %s && npm install', projectPath);
+    if(program.noNodeModules){
+        console.log('     $ cd %s && npm install', projectPath);
+    } else {
+        console.log('     $ cd %s', projectPath);
+    }
     console.log();
     console.log('   run the app:');
     console.log('     $ node app');
+    console.log('     open http://127.0.0.1:3000/example');
     console.log();
 });
