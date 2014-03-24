@@ -1,13 +1,12 @@
 {
   "name": "tse",
   "description": "create express project with typescript",
-  "version": "0.0.7",
+  "version": "0.1.2",
   "author": {
     "name": "qinjia",
     "email": "qinjia@outlook.com"
   },
   "dependencies": {
-    "commander":"*",
     "express": "3.4.8",
     "ejs": "*"
   },
