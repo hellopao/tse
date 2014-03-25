@@ -4,7 +4,7 @@
 
 import App = require('./app_controller');
 
-export class Example extends App.AppController {
+export class ExampleController extends App.AppController {
 
     constructor(public req: ExpressServerRequest, public res: ExpressServerResponse) {
         super(req, res);
@@ -18,5 +18,5 @@ export class Example extends App.AppController {
 
 
 export function index(req:ExpressServerRequest,res:ExpressServerResponse) {
-    return new Example(req,res).index();
+    return new ExampleController(req,res).index();
 }

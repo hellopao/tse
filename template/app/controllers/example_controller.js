@@ -8,21 +8,21 @@ var __extends = this.__extends || function (d, b) {
 };
 var App = require('./app_controller');
 
-var Example = (function (_super) {
-    __extends(Example, _super);
-    function Example(req, res) {
+var ExampleController = (function (_super) {
+    __extends(ExampleController, _super);
+    function ExampleController(req, res) {
         _super.call(this, req, res);
         this.req = req;
         this.res = res;
     }
-    Example.prototype.index = function () {
+    ExampleController.prototype.index = function () {
         this.res.render('example.html', {});
     };
-    return Example;
+    return ExampleController;
 })(App.AppController);
-exports.Example = Example;
+exports.ExampleController = ExampleController;
 
 function index(req, res) {
-    return new Example(req, res).index();
+    return new ExampleController(req, res).index();
 }
 exports.index = index;
