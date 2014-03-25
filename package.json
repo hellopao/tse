@@ -14,12 +14,7 @@
   "keywords": [
     "express",
     "typescript",
-    "web",
-    "rest",
-    "restful",
-    "router",
-    "app",
-    "api"
+    "restful"
   ],
   "repository": {
     "type": "git",
