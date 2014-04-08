@@ -1,7 +1,7 @@
 {
   "name": "tse",
   "description": "create express project with typescript",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "author": {
     "name": "qinjia",
     "email": "qinjia@outlook.com"
@@ -20,16 +20,16 @@
     "type": "git",
     "url": "git://github.com/hellopao/tse"
   },
+  "main": "index",
   "bin": {
     "tse": "./bin/tse"
   },
-  "scripts": {
-    "prepublish": "npm prune",
-    "test": "make test"
-  },
   "engines": {
-    "node": ">= 0.10.24"
+    "node": ">= 0.8.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/hellopao/tse",
+  "_id": "tse@0.1.8",
+  "_from": "tse@"
 }
 
