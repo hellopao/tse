@@ -29,9 +29,14 @@ createProject();
 process.on('exit', function () {
     console.log();
     console.log('   install dependencies:');
-    console.log('     $ cd %s && npm install', projectPath);
+    if (program.noNodeModules) {
+        console.log('     $ cd %s && npm install', projectPath);
+    } else {
+        console.log('     $ cd %s', projectPath);
+    }
     console.log();
     console.log('   run the app:');
     console.log('     $ node app');
+    console.log('     open http://127.0.0.1:3000/example');
     console.log();
 });

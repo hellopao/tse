@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-
-///<reference path="../lib/tslib/node.d.ts" />
 var path = require('path');
 
 var program = require('commander');
@@ -12,13 +10,13 @@ var version = pkg.version;
 
 program.version(version).option('-n,--noNodeModules', "do not use local node_modules").parse(process.argv);
 
-var projectPath = program.args.shift() || './test';
-projectPath = path.resolve(process.cwd(),projectPath);
+var projectPath = program.args.shift() || './tsedemo';
+//projectPath = path.resolve(process.cwd(),projectPath);
 
 function createProject() {
-    copy.copyDir(path.join(__dirname,'../template'), path.resolve(projectPath));
+    copy.copyDir('../template', projectPath);
     if (!program.noNodeModules) {
-        copy.copyDir(path.join(__dirname,'../node_modules'), path.join(projectPath, 'node_modules'));
+        copy.copyDir('../node_modules', path.join(projectPath, 'node_modules'));
     }
 }
 
@@ -27,7 +25,7 @@ createProject();
 process.on('exit', function () {
     console.log();
     console.log('   install dependencies:');
-    if(program.noNodeModules){
+    if (program.noNodeModules) {
         console.log('     $ cd %s && npm install', projectPath);
     } else {
         console.log('     $ cd %s', projectPath);

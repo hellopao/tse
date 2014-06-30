@@ -1,7 +1,7 @@
 {
   "name": "tse",
   "description": "create express project with typescript",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "author": {
     "name": "qinjia",
     "email": "qinjia@outlook.com"
@@ -28,7 +28,7 @@
   },
   "license": "MIT",
   "homepage": "https://github.com/hellopao/tse",
-  "_id": "tse@0.1.9",
+  "_id": "tse@0.2.0",
   "_from": "tse@"
 }
 
